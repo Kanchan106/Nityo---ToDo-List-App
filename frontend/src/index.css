@@ -1,0 +1,99 @@
+/* ✅ Theme variables */
+:root {
+  --primary: #2563eb;       /* blue */
+  --secondary: #9333ea;     /* purple */
+  --accent: #f59e0b;        /* amber */
+  --background: #ffffff;    /* light background */
+  --text-color: #111827;    /* black text for day */
+  --card-bg: #ffffff;       /* light card */
+  --border-color: #d1d5db;  /* light border */
+}
+
+.dark {
+  --primary: #60a5fa;       /* lighter blue for dark bg */
+  --secondary: #c084fc;     /* lighter purple */
+  --accent: #fbbf24;        /* brighter amber */
+  --background: #111827;    /* dark background */
+  --text-color: #f9fafb;    /* white text for night */
+  --card-bg: #1f2937;       /* dark card */
+  --border-color: #374151;  /* dark border */
+}
+
+/* ✅ Global styles */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* ✅ Cards (Login/Register/Dashboard) */
+.login-card,
+.register-card,
+.dashboard-card {
+  background: var(--card-bg);
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease;
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* ✅ Inputs */
+form input {
+  width: 90%;
+  max-width: 320px;
+  padding: 0.9rem;
+  margin: 0.6rem auto;
+  display: block;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease, border 0.5s ease;
+}
+
+form input::placeholder {
+  color: #6b7280;
+}
+
+/* ✅ Buttons */
+form button {
+  width: 90%;
+  max-width: 320px;
+  margin: 1rem auto 0;
+  display: block;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.5s ease;
+}
+
+form button:hover {
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  transform: scale(1.05);
+}
+
+/* ✅ Theme toggle button */
+.theme-toggle {
+  margin: 1rem 0;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.5s ease;
+}
+.theme-toggle:hover {
+  background: var(--secondary);
+}
+.theme-toggle:active {
+  transform: rotate(180deg);
+}

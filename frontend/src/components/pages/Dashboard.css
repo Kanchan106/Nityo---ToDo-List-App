@@ -1,0 +1,187 @@
+/* Background changes with theme */
+.dashboard-container {
+  min-height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  color: var(--text-color); /* ✅ black in light, white in dark */
+}
+
+/* Title styling */
+.dashboard-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card styling */
+.dashboard-card {
+  background: var(--card-bg);
+  border: 2px solid var(--secondary);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  width: 280px;
+  transition: background 0.5s ease, color 0.5s ease;
+  color: var(--text-color);
+}
+
+/* Emoji styling */
+.emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Button styling */
+.action-btn {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.action-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Progress bar styling */
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #e5e7eb; /* light gray */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  transition: width 0.5s ease;
+}
+.dark .progress-bar {
+  background-color: #374151; /* dark gray */
+}
+
+/* Header with logout */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin-bottom: 1.5rem;
+}
+.logout-btn {
+  background: linear-gradient(90deg, var(--accent), var(--secondary));
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.logout-btn:hover {
+  background: linear-gradient(90deg, var(--secondary), var(--primary));
+  transform: scale(1.05);
+}
+
+/* Task styling */
+.task-item {
+  margin: 0.6rem 0;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--text-color);
+}
+.task-item span {
+  font-size: 0.95rem;
+}
+.task-item select {
+  margin-top: 0.3rem;
+  padding: 0.4rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* Event styling */
+.event-item {
+  margin: 0.6rem 0;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--text-color);
+}
+.event-item span {
+  font-size: 0.95rem;
+}
+.event-item input {
+  margin: 0.3rem 0;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+/* Delete button styling */
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.delete-btn:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Lists inside cards */
+.dashboard-card ul {
+  text-align: left;
+  margin: 0.5rem 0;
+  padding-left: 1.2rem;
+}
+.dashboard-card li {
+  margin: 0.3rem 0;
+}
+
+/* ✅ Responsive vertical structure for mobile */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .logout-btn {
+    width: 100%;
+  }
+  .dashboard-card {
+    width: 100%;
+    max-width: 95%;
+  }
+}
